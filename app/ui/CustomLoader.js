@@ -7,12 +7,12 @@ import { ActivityIndicator } from 'react-native';
 export default CustomLoader = (props) => {
 
     return (
-        <View style={config.navBar}>
-            <View style={config.loaderIcon}>
+        <View style={config.loaderContainer}>
+            <View style={{marginRight: 10}}>
                 <ActivityIndicator size="small" color={config.lightGray} />
             </View>
-            <View style={config.loaderIcon}>
-                <Text>Loading</Text>
+            <View>
+                <Text style={config.loaderText}>Loading</Text>
             </View>
         </View>
     );
