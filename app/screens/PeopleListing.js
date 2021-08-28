@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import config from '../../config';
 import { FlatList, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native';
@@ -8,71 +8,52 @@ import { ActivityIndicator } from 'react-native';
 import { Loader } from '../ui/CustomLoader';
 import { StyleSheet } from 'react-native';
 import PeopleCard from '../ui/PeopleCard';
+import { useQuery } from '@apollo/client';
+import { GET_ALL_PEOPLE } from '../graphql/query/GetAllPeople';
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      marginTop: StatusBar.currentHeight || 0,
-    },
-    item: {
-      backgroundColor: '#f9c2ff',
-      padding: 20,
-      marginVertical: 8,
-      marginHorizontal: 16,
-    },
-    title: {
-      fontSize: 32,
-    },
-});
-
-const DATA = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      name: 'First Item',
-      role: 'Role role role'
-    },
-    {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      name: 'Second Item',
-      role: 'Role role role'
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      name: 'Third Item',
-      role: 'Role role role'
-    },
-    {
-        id: '58694a0f-3da1-471f-bd96-145571e29d72',
-        name: 'Third Item',
-        role: 'Role role role'
-    },
-    {
-        id: '58694a0f-3da1-471f-bd96-145571e29d72',
-        name: 'Third Item',
-        role: 'Role role role'
-    },
-];
 
 const Item = (props) => (
-    <PeopleCard name={props.name} role={props.role}/>
+    <PeopleCard name={props.name} species={props.species} homeworld={props.homeworld}/>
 );
 
 const PeopleListing = ({route, navigation}) => {
 
-    const renderItem = ({ item }) => (
-        <Item name={item.name} role={item.role} />
-      );
+    const { data, error, loading } = useQuery(GET_ALL_PEOPLE);
 
-    return (
-        <SafeAreaView style={[, { backgroundColor: config.white }]}>
-            <StatusBar barStyle={config.statusBarContent} backgroundColor={config.headerBackgroundColor} />
-            <CustomLoader/>
-                <FlatList
-                    data={DATA}
-                    renderItem={renderItem}
-                    keyExtractor={item => item.id}
-                />
-        </SafeAreaView>
+    useEffect(() => {
+        console.log(data);
+    }, [])
+
+    const renderItem = ({ item }) => (
+        <Item name={item.name} species={item.species} homeworld={item.homeworld} />
+    );
+
+        if (loading && !data){
+            return (
+                <SafeAreaView style={[, { backgroundColor: config.white }]}>
+                    <StatusBar barStyle={config.statusBarContent} backgroundColor={config.headerBackgroundColor} />
+                    <CustomLoader/>
+                </SafeAreaView>
+            )
+        }
+        if (error) {
+            return (
+                <SafeAreaView style={[, { backgroundColor: config.white }]}>
+                    <View style={config.loaderContainer}>
+                        <Text style={config.failedLoadDataText}>Failed to Load Data</Text>
+                    </View>
+                </SafeAreaView>
+            )
+        }
+        return (
+            <SafeAreaView style={[, { backgroundColor: config.white }]}>
+                <StatusBar barStyle={config.statusBarContent} backgroundColor={config.headerBackgroundColor} />
+                    <FlatList
+                        data={data.allPeople.people}
+                        renderItem={renderItem}
+                        keyExtractor={item => item.id}
+                    />
+            </SafeAreaView>
     )
 }
 
