@@ -6,7 +6,10 @@ import { Text } from 'react-native';
 const PersonDetails = ({route, navigation}) => {
 
     return (
-        <Text>Hello from Person Details!</Text>
+        <View>
+            <Text>Hello from Person Details!</Text>
+        </View>
+        
     )
 }
 

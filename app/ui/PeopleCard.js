@@ -13,9 +13,9 @@ export default Card = (props) => {
     const navigation = useNavigation();
 
     if (props.species!==null) {
-        localSpecie = props.species.name+" of";
+        localSpecie = props.species.name+" from ";
     } else {
-        localSpecie = "Human of";
+        localSpecie = "Human from ";
     }
 
     return (

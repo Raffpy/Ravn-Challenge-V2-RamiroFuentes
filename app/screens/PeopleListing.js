@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native';
 import { View } from 'react-native';
 import { Text } from 'react-native';
 import { ActivityIndicator } from 'react-native';
-import { Loader } from '../ui/CustomLoader';
+import CustomLoader, { Loader } from '../ui/CustomLoader';
 import { StyleSheet } from 'react-native';
 import PeopleCard from '../ui/PeopleCard';
 import { useQuery } from '@apollo/client';
@@ -18,7 +18,9 @@ const Item = (props) => (
 
 const PeopleListing = ({route, navigation}) => {
 
-    const { data, error, loading } = useQuery(GET_ALL_PEOPLE);
+    const { data, error, loading, fetchMore } = useQuery(GET_ALL_PEOPLE, {
+        variables : { after: null }
+    });
 
     useEffect(() => {
         console.log(data);
@@ -52,6 +54,20 @@ const PeopleListing = ({route, navigation}) => {
                         data={data.allPeople.people}
                         renderItem={renderItem}
                         keyExtractor={item => item.id}
+                        ListFooterComponent={() =>loading?null:<CustomLoader/>}
+                        onEndReached={()=>{
+                            const { endCursor } = data.allPeople.pageInfo;
+                            fetchMore({
+                                variables: {after: endCursor},
+                                updateQuery: (prevResult, { fetchMoreResult }) => {
+                                    fetchMoreResult.allPeople.people =[
+                                        ...prevResult.allPeople.people,
+                                        ...fetchMoreResult.allPeople.people
+                                    ];
+                                    return fetchMoreResult;
+                                }
+                            })
+                        }}
                     />
             </SafeAreaView>
     )
