@@ -100,6 +100,12 @@ export default {
         textTransform: 'capitalize',
     },
 
+    personDetailsYearValues: {
+        color: $ravnBlack,
+        textTransform:'uppercase',
+        fontWeight: 'bold'
+    },
+
     personVehiclesText: {
         color: $textLight,
         fontWeight: 'bold',

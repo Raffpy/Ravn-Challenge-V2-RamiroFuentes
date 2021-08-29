@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import config from '../../config';
-import { Header } from '../ui/Header';
 import { View, Text, FlatList } from 'react-native';
 import { SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
+import VehicleCard from '../ui/VehicleCard';
 
 const PersonDetails = ({route, navigation}) => {
 
@@ -15,11 +15,10 @@ const PersonDetails = ({route, navigation}) => {
     }, [])
 
     const renderItem = ({ item }) => (
-        <View style={config.personVehiclesCard}>
-            <Text style={config.personVehiclesText}>{item.name}</Text>
-        </View>
+        <VehicleCard name={ item.name }/>
     );
     
+   
     return (
         <View>
             <Text style={config.personSectionTitles}>General Information</Text>
@@ -56,7 +55,7 @@ const PersonDetails = ({route, navigation}) => {
                     <Text style={config.personDetailsTitles}>Birth Year</Text>
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <Text style={config.personDetailsValues}>{birthYear}</Text>
+                    <Text style={config.personDetailsYearValues}>{birthYear}</Text>
                 </View>    
             </View>
             
@@ -67,8 +66,7 @@ const PersonDetails = ({route, navigation}) => {
                     renderItem={renderItem}>
                 </FlatList>
             </View>
-        </View>
-        
+        </View>   
     )
 }
 

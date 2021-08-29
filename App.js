@@ -16,8 +16,8 @@ import { ApolloProvider } from '@apollo/client'
 import { client } from './app/graphql/Client';
 import CustomLoader from './app/ui/CustomLoader';
 
+//Creating the stack navigator const
 const Stack = createNativeStackNavigator();
-
 
 export default function App(){
 
@@ -51,6 +51,3 @@ export default function App(){
     </ApolloProvider>
   );
 };
-
-
-//export default App;

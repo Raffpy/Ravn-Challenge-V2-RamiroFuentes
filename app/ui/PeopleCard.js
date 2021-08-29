@@ -5,12 +5,16 @@ import config from '../../config';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 
-export default Card = (props) => {
+export default PeopleCard = (props) => {
     
+    //For load FontAwesome Icons
     Icon.loadFont();
     
-    let localSpecie = null;
+    //No enable navigation in the person cad
     const navigation = useNavigation();
+
+    let localSpecie = null;
+    
 
     if (props.species!==null) {
         localSpecie = props.species.name+" from ";
@@ -20,6 +24,7 @@ export default Card = (props) => {
     
     return (
         <TouchableOpacity {...props} onPress={() => navigation.navigate('PersonDetails', {
+            id: props.id,
             name: props.name,
             eyeColor: props.eyeColor,
             hairColor: props.hairColor,
