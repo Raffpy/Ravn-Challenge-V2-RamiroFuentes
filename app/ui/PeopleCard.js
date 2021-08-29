@@ -17,9 +17,16 @@ export default Card = (props) => {
     } else {
         localSpecie = "Human from ";
     }
-
+    
     return (
-        <TouchableOpacity {...props} onPress={() => navigation.navigate('PersonDetails')}>
+        <TouchableOpacity {...props} onPress={() => navigation.navigate('PersonDetails', {
+            name: props.name,
+            eyeColor: props.eyeColor,
+            hairColor: props.hairColor,
+            skinColor: props.skinColor,
+            birthYear: props.birthYear,
+            vehicleConnection: props.vehicleConnection
+          })}>
             <View {...props} style={config.peopleCardStyle}>
                 <View>
                     <Text style={config.peopleCardName}>{props.name}</Text>

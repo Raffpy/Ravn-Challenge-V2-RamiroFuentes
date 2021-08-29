@@ -61,4 +61,71 @@ export default {
         marginBottom: 5,
     },
 
+    personDetailsStyle : {
+        flexDirection: 'row',
+        marginHorizontal: 10,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 0,
+        elevation: 0,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingRight: 14,
+        marginTop: 6,
+        marginBottom: 6,
+        marginLeft: 16,
+        marginRight: 16,
+        borderBottomColor: $separatorPeopleCard,
+        borderBottomWidth: 1,
+        marginBottom: 5,
+    },
+
+    personSectionTitles: {
+        color: $ravnBlack,
+        fontWeight: 'bold',
+        marginTop: 30,
+        marginHorizontal: 16,
+        marginBottom: 6,
+    },
+
+    personDetailsTitles: {
+        color: $textLight,
+        fontWeight: 'bold',
+    },
+
+    personDetailsValues: {
+        color: $ravnBlack,
+        fontWeight: 'bold',
+        textTransform: 'capitalize',
+    },
+
+    personVehiclesText: {
+        color: $textLight,
+        fontWeight: 'bold',
+        marginTop: 6,
+        marginBottom: 6,
+    },
+
+    personVehiclesCard : {
+        flexDirection: 'row',
+        marginHorizontal: 10,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 0,
+        elevation: 0,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 6,
+        marginBottom: 6,
+        marginLeft: 16,
+        marginRight: 16,
+        borderBottomColor: $separatorPeopleCard,
+        borderBottomWidth: 1,
+        marginBottom: 5,
+    },
+
+    
+
 }

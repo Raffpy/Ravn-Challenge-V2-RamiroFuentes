@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import config from '../../config';
 import { FlatList, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native';
@@ -13,7 +13,7 @@ import { GET_ALL_PEOPLE } from '../graphql/query/GetAllPeople';
 
 
 const Item = (props) => (
-    <PeopleCard name={props.name} species={props.species} homeworld={props.homeworld}/>
+    <PeopleCard name={props.name} species={props.species} homeworld={props.homeworld} eyeColor={props.eyeColor} hairColor={props.hairColor} skinColor={props.skinColor} birthYear={props.birthYear} vehicleConnection={props.vehicleConnection}/>
 );
 
 const PeopleListing = ({route, navigation}) => {
@@ -22,12 +22,12 @@ const PeopleListing = ({route, navigation}) => {
         variables : { after: null }
     });
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         console.log(data);
     }, [])
 
     const renderItem = ({ item }) => (
-        <Item name={item.name} species={item.species} homeworld={item.homeworld} />
+        <Item name={item.name} species={item.species} homeworld={item.homeworld} eyeColor={item.eyeColor} hairColor={item.hairColor} skinColor={item.skinColor} birthYear={item.birthYear} vehicleConnection={item.vehicleConnection}/>
     );
 
         if (loading && !data){

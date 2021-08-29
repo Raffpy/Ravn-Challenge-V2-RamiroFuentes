@@ -39,7 +39,11 @@ export default function App(){
           <Stack.Screen name="PersonDetails" 
             component={PersonDetails} 
             options={{
-              title: 'Person Details'
+              title: '', 
+              headerStyle: {
+                backgroundColor: config.headerBackgroundColor,
+              },
+              headerTintColor: config.headerTextColor,
             }}
           />
         </Stack.Navigator>

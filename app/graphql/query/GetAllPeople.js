@@ -6,6 +6,10 @@ export const GET_ALL_PEOPLE = gql `
             people {
                 id
                 name
+              	eyeColor
+              	hairColor
+              	skinColor
+              	birthYear
                 species {
                     id
                     name
@@ -14,6 +18,12 @@ export const GET_ALL_PEOPLE = gql `
                 homeworld {
                     id
                     name
+                }
+              	vehicleConnection {
+                  vehicles {
+                    id
+                    name
+                  }
                 }
             }
             pageInfo{
