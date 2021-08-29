@@ -30,16 +30,18 @@ Open a terminal and type cd command to stay in the project folder then type the 
 # Features
 
 Loading data:
-![1_loading_data](https://user-images.githubusercontent.com/18149949/131267205-4c0974f9-0011-427c-8b30-30b5dd22920a.png)
+![1_loading_data](https://user-images.githubusercontent.com/18149949/131267498-b43d0c6d-218d-4903-b7c0-26802691f98c.png)
+
 
 Loading 5 records at time:
-![2_loadig5](https://user-images.githubusercontent.com/18149949/131267222-e61c65b3-2cc9-4bf3-8665-c71bab68fcd3.png)
+![2_loadig5](https://user-images.githubusercontent.com/18149949/131267506-64401a9a-f1d3-4cb2-95a7-3edac3d73f2f.png)
 
 Complete records loaded:
-![3_allrecords](https://user-images.githubusercontent.com/18149949/131267241-6459c435-c53b-4d03-ac94-59b133d350a3.png)
+![3_allrecords](https://user-images.githubusercontent.com/18149949/131267509-a1796f67-d555-47b3-b549-caf8f00accdf.png)
 
 Person details:
-![4_persondetails](https://user-images.githubusercontent.com/18149949/131267253-3c8d3b5d-e258-4ea9-b3e2-4f33d05a3cb7.png)
+![4_persondetails](https://user-images.githubusercontent.com/18149949/131267512-8d6c0f91-4362-4d37-9245-5873cafb151b.png)
 
 When any error happens:
-![5_error](https://user-images.githubusercontent.com/18149949/131267287-19da359a-7149-432c-933d-958f8bec85ca.png)
+![5_error](https://user-images.githubusercontent.com/18149949/131267515-32a905bc-2d83-4855-bff1-79fb16d7a17f.png)
+
