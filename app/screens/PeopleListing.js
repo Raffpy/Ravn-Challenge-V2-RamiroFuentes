@@ -50,7 +50,7 @@ const PeopleListing = ({route, navigation}) => {
         )
     }
     return (
-        <SafeAreaView style={[, { backgroundColor: config.white }]}>
+        <SafeAreaView style={config.peopleListingSafeArea }>
             <StatusBar barStyle={config.statusBarContent} backgroundColor={config.headerBackgroundColor} />
                 <FlatList
                     data={data.allPeople.people}

@@ -14,7 +14,8 @@ export default {
     headerTextColor: $white,
     statusBarContent: $statusBarContent,
     lightGray: $textLight,
-    
+    customWhite: $white,
+
     loaderContainer: {
         marginTop: 5,
         height: 40,
@@ -23,21 +24,35 @@ export default {
         justifyContent: 'center'
     },
     loaderText: {
+        fontSize: 17,
         color: $textLight,
         fontWeight: 'bold'
     },
     failedLoadDataText: {
+        fontSize: 17,
         color: $customRed,
         fontWeight: 'bold'
     },
 
     peopleCardName: {
+        fontSize: 16,
         color: $ravnBlack,
         fontWeight: 'bold'
     },
 
     peopleCardRole: {
-        color: $textLight
+        fontSize: 13,
+        color: $textLight,
+        marginBottom: 16
+    },
+
+    peopleCardArrow: {
+        alignItems: 'center', 
+        marginBottom:12
+    },
+
+    peopleListingSafeArea: {
+        marginTop: 10,
     },
 
     peopleCardStyle : {
@@ -51,14 +66,13 @@ export default {
         elevation: 0,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingRight: 14,
-        marginTop: 6,
-        marginBottom: 6,
+        paddingRight: 16,
+        marginTop: 8,
+        marginBottom: 8,
         marginLeft: 16,
         marginRight: 16,
         borderBottomColor: $separatorPeopleCard,
-        borderBottomWidth: 1,
-        marginBottom: 5,
+        borderBottomWidth: 1
     },
 
     personDetailsStyle : {
@@ -87,23 +101,27 @@ export default {
         marginTop: 30,
         marginHorizontal: 16,
         marginBottom: 6,
+        fontSize: 16,
     },
 
     personDetailsTitles: {
         color: $textLight,
         fontWeight: 'bold',
+        fontSize: 16,
     },
 
     personDetailsValues: {
         color: $ravnBlack,
         fontWeight: 'bold',
         textTransform: 'capitalize',
+        fontSize: 16,
     },
 
     personDetailsYearValues: {
         color: $ravnBlack,
         textTransform:'uppercase',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 16,
     },
 
     personVehiclesText: {
@@ -111,6 +129,7 @@ export default {
         fontWeight: 'bold',
         marginTop: 6,
         marginBottom: 6,
+        fontSize: 16,
     },
 
     personVehiclesCard : {

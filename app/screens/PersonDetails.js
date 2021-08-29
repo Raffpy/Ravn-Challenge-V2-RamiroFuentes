@@ -20,7 +20,7 @@ const PersonDetails = ({route, navigation}) => {
     
    
     return (
-        <View>
+        <View style={config.peopleListingSafeArea}>
             <Text style={config.personSectionTitles}>General Information</Text>
 
             <View style={config.personDetailsStyle}>

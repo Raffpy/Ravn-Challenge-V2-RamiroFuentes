@@ -37,7 +37,7 @@ export default PeopleCard = (props) => {
                     <Text style={config.peopleCardName}>{props.name}</Text>
                     <Text style={config.peopleCardRole}>{localSpecie+props.homeworld.name}</Text>
                 </View>
-                <View style={{alignItems: 'center'}}>
+                <View style={config.peopleCardArrow}>
                     <Icon name="chevron-right"  size={10} />
                 </View>    
             </View>
