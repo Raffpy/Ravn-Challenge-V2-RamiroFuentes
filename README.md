@@ -2,6 +2,7 @@
 This repo is specially for store and manage the change control for the Ravn Code Challenge
 
 # Requirements
+* Version of xcode: 12.5.1 
 * Version of node: v14.17.5
 * Version of react-native-cli: 2.0.1
 * Version of react-native: 0.65.1
@@ -45,4 +46,5 @@ Person details:
 
 When any error happens:
 
-![5_error](https://user-images.githubusercontent.com/18149949/131267515-32a905bc-2d83-4855-bff1-79fb16d7a17f.png)
+![5_error](https://user-images.githubusercontent.com/18149949/131283411-513d3e08-8c13-4654-aecc-d4e83b274fff.png)
+
