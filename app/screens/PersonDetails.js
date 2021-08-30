@@ -17,7 +17,6 @@ const PersonDetails = ({route, navigation}) => {
     const renderItem = ({ item }) => (
         <VehicleCard name={ item.name }/>
     );
-    
    
     return (
         <View style={config.peopleListingSafeArea}>
