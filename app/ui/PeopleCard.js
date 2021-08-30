@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native';
-import config from '../../config';
+//import config from '../../config';
+import styles from '../../styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 
@@ -32,12 +33,12 @@ export default PeopleCard = (props) => {
             birthYear: props.birthYear,
             vehicleConnection: props.vehicleConnection
           })}>
-            <View {...props} style={config.peopleCardStyle}>
+            <View {...props} style={styles.peopleCardStyle}>
                 <View>
-                    <Text style={config.peopleCardName}>{props.name}</Text>
-                    <Text style={config.peopleCardRole}>{localSpecie+props.homeworld.name}</Text>
+                    <Text style={styles.peopleCardName}>{props.name}</Text>
+                    <Text style={styles.peopleCardRole}>{localSpecie+props.homeworld.name}</Text>
                 </View>
-                <View style={config.peopleCardArrow}>
+                <View style={styles.peopleCardArrow}>
                     <Icon name="chevron-right"  size={10} />
                 </View>    
             </View>

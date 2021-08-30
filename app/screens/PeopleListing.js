@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import config from '../../config';
+import styles from '../../styles';
 import { FlatList, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native';
 import { View } from 'react-native';
@@ -34,24 +34,25 @@ const PeopleListing = ({route, navigation}) => {
 
     if (loading && !data){
         return (
-            <SafeAreaView style={[, { backgroundColor: config.white }]}>
-                <StatusBar barStyle={config.statusBarContent} backgroundColor={config.headerBackgroundColor} />
+            <SafeAreaView style={[, { backgroundColor: styles.white }]}>
+                <StatusBar barStyle={styles.statusBarContent} backgroundColor={styles.headerBackgroundColor} />
                 <CustomLoader/>
             </SafeAreaView>
         )
     }
     if (error) {
         return (
-            <SafeAreaView style={[, { backgroundColor: config.white }]}>
-                <View style={config.loaderContainer}>
-                    <Text style={config.failedLoadDataText}>Failed to Load Data</Text>
+            <SafeAreaView style={[, { backgroundColor: styles.white }]}>
+                <StatusBar barStyle={styles.statusBarContent} backgroundColor={styles.headerBackgroundColor} />
+                <View style={styles.loaderContainer}>
+                    <Text style={styles.failedLoadDataText}>Failed to Load Data</Text>
                 </View>
             </SafeAreaView>
         )
     }
     return (
-        <SafeAreaView style={config.peopleListingSafeArea }>
-            <StatusBar barStyle={config.statusBarContent} backgroundColor={config.headerBackgroundColor} />
+        <SafeAreaView style={styles.peopleListingSafeArea }>
+            <StatusBar barStyle={styles.statusBarContent} backgroundColor={styles.headerBackgroundColor} />
                 <FlatList
                     data={data.allPeople.people}
                     renderItem={renderItem}

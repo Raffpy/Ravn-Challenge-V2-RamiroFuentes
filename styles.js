@@ -1,5 +1,3 @@
-import { Platform, Appearance } from 'react-native';
-
 const $ravnBlack = '#121212';
 const $textDark = '#333333';
 const $textLight = '#828282';
@@ -150,7 +148,4 @@ export default {
         borderBottomWidth: 1,
         marginBottom: 5,
     },
-
-    
-
 }

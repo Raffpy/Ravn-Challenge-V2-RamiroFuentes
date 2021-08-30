@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import config from '../../config';
+//import config from '../../config';
+import styles from '../../styles';
 import { View, Text, FlatList } from 'react-native';
 import { SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
 import VehicleCard from '../ui/VehicleCard';
@@ -19,46 +20,46 @@ const PersonDetails = ({route, navigation}) => {
     );
    
     return (
-        <View style={config.peopleListingSafeArea}>
-            <Text style={config.personSectionTitles}>General Information</Text>
+        <View style={styles.peopleListingSafeArea}>
+            <Text style={styles.personSectionTitles}>General Information</Text>
 
-            <View style={config.personDetailsStyle}>
-                <View style={config.peopleCardName}>
-                    <Text style={config.personDetailsTitles}>Eye Color</Text>
+            <View style={styles.personDetailsStyle}>
+                <View style={styles.peopleCardName}>
+                    <Text style={styles.personDetailsTitles}>Eye Color</Text>
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <Text style={config.personDetailsValues}>{eyeColor}</Text>
+                    <Text style={styles.personDetailsValues}>{eyeColor}</Text>
                 </View>    
             </View>
 
-            <View style={config.personDetailsStyle}>
-                <View style={config.peopleCardName}>
-                    <Text style={config.personDetailsTitles}>Hair Color</Text>
+            <View style={styles.personDetailsStyle}>
+                <View style={styles.peopleCardName}>
+                    <Text style={styles.personDetailsTitles}>Hair Color</Text>
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <Text style={config.personDetailsValues}>{hairColor}</Text>
+                    <Text style={styles.personDetailsValues}>{hairColor}</Text>
                 </View>    
             </View>
 
-            <View style={config.personDetailsStyle}>
-                <View style={config.peopleCardName}>
-                    <Text style={config.personDetailsTitles}>Skin Color</Text>
+            <View style={styles.personDetailsStyle}>
+                <View style={styles.peopleCardName}>
+                    <Text style={styles.personDetailsTitles}>Skin Color</Text>
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <Text style={config.personDetailsValues}>{skinColor}</Text>
+                    <Text style={styles.personDetailsValues}>{skinColor}</Text>
                 </View>    
             </View>
 
-            <View style={config.personDetailsStyle}>
-                <View style={config.peopleCardName}>
-                    <Text style={config.personDetailsTitles}>Birth Year</Text>
+            <View style={styles.personDetailsStyle}>
+                <View style={styles.peopleCardName}>
+                    <Text style={styles.personDetailsTitles}>Birth Year</Text>
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <Text style={config.personDetailsYearValues}>{birthYear}</Text>
+                    <Text style={styles.personDetailsYearValues}>{birthYear}</Text>
                 </View>    
             </View>
             
-            <Text style={config.personSectionTitles}>Vehicles</Text>
+            <Text style={styles.personSectionTitles}>Vehicles</Text>
             <View>
                 <FlatList
                     data={vehicleConnection.vehicles}
