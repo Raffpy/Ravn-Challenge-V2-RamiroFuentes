@@ -4,8 +4,12 @@ const $textLight = '#828282';
 const $textEnphasis = '#EC5757';
 const $white = '#FFFFFF';
 const $statusBarContent = 'light-content';
-const $customRed = '#EC5757'
+const $customRed = '#EC5757';
 const $separatorPeopleCard = '#E5E5E5'
+const $regularFont = 'SFProDisplay-Regular';
+const $regularBoldFont = 'SFProDisplay-Heavy';
+const $regularMediumFont = 'SFProDisplay-Medium';
+const $regularSemiboldFont = 'SFProDisplay-Semibold';
 
 export default {
     headerBackgroundColor: $ravnBlack,
@@ -13,6 +17,10 @@ export default {
     statusBarContent: $statusBarContent,
     lightGray: $textLight,
     customWhite: $white,
+    defaultFont: $regularFont,
+    defaultMediumFont: $regularMediumFont,
+    defaultBoldFont: $regularBoldFont,
+    defaultSemiboldFont: $regularSemiboldFont,
 
     loaderContainer: {
         marginTop: 5,
@@ -33,13 +41,14 @@ export default {
     },
 
     peopleCardName: {
+        fontFamily: $regularSemiboldFont,
         fontSize: 16,
-        color: $ravnBlack,
-        fontWeight: 'bold'
+        color: $ravnBlack
     },
 
     peopleCardRole: {
-        fontSize: 13,
+        fontFamily: $regularFont,
+        fontSize: 14,
         color: $textLight,
         marginBottom: 16
     },
