@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PeopleListing from './app/screens/PeopleListing';
 import PersonDetails from './app/screens/PersonDetails';
-//import config from './config';
 import styles from './styles';
 import { ApolloProvider } from '@apollo/client'
 import { client } from './app/graphql/Client';
